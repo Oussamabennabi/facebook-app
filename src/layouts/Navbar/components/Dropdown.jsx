@@ -1,14 +1,16 @@
 import React, {  useState } from 'react'
 
 import { CSSTransition } from 'react-transition-group';
-import {DisplayDropdown, HelpDropdown, MainDropdown, SettingsDropdown} from './dropdowns';
+import {DisplayDropdown, HelpDropdown, KeyboardDropdown, MainDropdown, SettingsDropdown} from './dropdowns';
    
 export const Dropdown = () => {
 
     const [activeMenu, setActiveMenu] = useState('main');
-    const [menuHeight, setMenuHeight] = useState(null);
+    const [menuHeight, setMenuHeight] = useState('full');
   function calcHeight(el) {
-      const height = el.offsetHeight + 40;
+
+      const height =
+        activeMenu === "display" ? el.offsetHeight + 90:el.offsetHeight + 40 ;
       setMenuHeight(height)
     }
   return (
@@ -62,6 +64,18 @@ export const Dropdown = () => {
       >
         <div className="menu">
           <DisplayDropdown setActiveMenu={setActiveMenu} />
+        </div>
+      </CSSTransition>
+      {/* KEYBOARD DROPDOWN */}
+      <CSSTransition
+        in={activeMenu === "keyboard"}
+        classNames="menu-third"
+        unmountOnExit
+        timeout={400}
+        onEnter={calcHeight}
+      >
+        <div className="menu">
+          <KeyboardDropdown setActiveMenu={setActiveMenu} />
         </div>
       </CSSTransition>
     </div>

@@ -3,9 +3,7 @@ import React from 'react'
 const index = () => {
     return (
       <div
-        className=" text-xs max-w-6xl md:p-8 sm:p-8 lg:p-8 xl:p-0 mx-auto  w-full  
-        
-      text-gray-500 mt-8"
+        className=" text-xs max-w-6xl md:p-8 sm:p-8 lg:p-8 xl:p-0 mx-auto  w-full px-4 text-gray-500 mt-8"
       >
         <div className="flex flex-wrap gap-4">
           <a href="somthing.html">English (US)</a>

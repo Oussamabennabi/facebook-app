@@ -237,9 +237,9 @@ nav {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 1rem;
   width: 100%;
   padding: .7rem;
@@ -267,6 +267,32 @@ nav {
 .dropdown-item img.user-icon {
   width: 35px;
   height: 35px;
+}
+
+.dropdown-item-no-hover {
+  cursor: default;
+}
+
+.dropdown-item-no-hover:hover {
+  background-color: transparent;
+}
+
+.radio-filed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+  padding: .7rem;
+  cursor: pointer;
+  border-radius: .4rem;
+  margin-left: 45px;
+}
+
+.radio-filed:hover, .radio-filed:focus {
+  background-color: #464748;
 }
 
 .menu {
@@ -311,6 +337,26 @@ nav {
 }
 
 .menu-secondary-exit-active {
+  -webkit-transform: translateX(110%);
+          transform: translateX(110%);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.menu-third-enter {
+  position: absolute;
+  -webkit-transform: translateX(110%);
+          transform: translateX(110%);
+}
+
+.menu-third-enter-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.menu-third-exit-active {
   -webkit-transform: translateX(110%);
           transform: translateX(110%);
   -webkit-transition: all .3s ease-in-out;

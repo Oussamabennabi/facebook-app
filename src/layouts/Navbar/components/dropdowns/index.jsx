@@ -10,9 +10,10 @@ import {
   MdLanguage,
   MdOutlineMailOutline,
 } from "react-icons/md";
+import { AiFillCompass, AiTwotoneStar } from "react-icons/ai";
 import {GoReport} from 'react-icons/go'
 import { ImExit } from "react-icons/im";
-import { FaLock } from 'react-icons/fa'
+import { FaLock, FaKeyboard } from "react-icons/fa";
 import { BsListStars, BsFillMoonFill } from "react-icons/bs";
 import {RiListSettingsFill} from 'react-icons/ri'
 
@@ -152,6 +153,7 @@ export const HelpDropdown = ({ setActiveMenu }) => {
         </span>
         <h1 className="font-bold text-2xl text-white">Help & support</h1>
       </div>
+
       {/* item */}
       <div>
         <DropdownItem leftIcon={<IoMdHelpCircle />}>
@@ -178,5 +180,125 @@ export const HelpDropdown = ({ setActiveMenu }) => {
           
 
 export const DisplayDropdown = ({ setActiveMenu }) => {
-  return <div></div>;
+  return (
+    <>
+      <div className="dropdown-header mb-3">
+        <span onClick={() => setActiveMenu("main")}>
+          <BackIcon className="icon" />
+        </span>
+        <h1 className="font-bold text-2xl text-white">
+          Display & accessibility
+        </h1>
+      </div>
+      {/* item */}
+      <div className="dropdown-item-no-hover dropdown-item ">
+        <span className="left-icon mt-1">
+          <BsFillMoonFill />{" "}
+        </span>
+        <div className="flex flex-col items-start">
+          <h3 className="text-white font-semibold ">Dark Mode</h3>
+          <p className="text-sm text-neutral-400">
+            Adjust the appearance of Facebook to reduce glare and give your eyes
+            a break.
+          </p>
+        </div>
+      </div>
+
+      <fieldset>
+        <label className="radio-filed text-white">
+          <span>Off</span>
+          <input type="radio" id="off" name="drone" value="off" />
+        </label>
+
+        <label className="radio-filed text-white">
+          <span>On</span>
+          <input type="radio" id="on" name="drone" value="on" />
+        </label>
+
+        <label className=" radio-filed text-white">
+          <div className="flex flex-col items-start">
+            <span>Automatic</span>
+            <p className="text-[calc(11px)] text-neutral-400">
+              We'll automatically adjust the display based opn your device's
+              system settings.
+            </p>
+          </div>
+          <input type="radio" id="Automatic" name="drone" value="Automatic" />
+        </label>
+      </fieldset>
+
+      {/* item */}
+      <div className="dropdown-item-no-hover dropdown-item  ">
+        <span className="left-icon mt-1">
+          <AiFillCompass />{" "}
+        </span>
+        <div className="flex flex-col items-start">
+          <h3 className="text-white font-semibold ">Compact Mode</h3>
+          <p className="text-sm text-neutral-400">
+            Make your font size smaller so more content can fit on the screen.
+          </p>
+        </div>
+      </div>
+
+      {/* item */}
+      <div onClick={() => setActiveMenu("keyboard")}>
+        <DropdownItem
+          rightIcon={<MdOutlineArrowForwardIos />}
+          leftIcon={<FaKeyboard />}
+        >
+          <h3 className="text-white font-semibold ">Keyboard</h3>
+        </DropdownItem>
+      </div>
+    </>
+  );
 };
+
+
+export const KeyboardDropdown = ({ setActiveMenu }) => {
+  return (
+    <>
+      <div className="dropdown-header mb-3">
+        <span onClick={() => setActiveMenu("display")}>
+          <BackIcon className="icon" />
+        </span>
+        <h1 className="font-bold text-2xl text-white">Help & support</h1>
+      </div>
+
+      {/* item */}
+
+      <DropdownItem leftIcon={<FaKeyboard />}>
+        <h3 className="text-white font-semibold ">
+          See all keyboard shortcuts
+        </h3>
+      </DropdownItem>
+
+      {/* item */}
+      <div className="dropdown-item-no-hover dropdown-item  ">
+        <span className="left-icon mt-1">
+          <AiTwotoneStar />{" "}
+        </span>
+        <div className="flex flex-col items-start">
+          <h3 className="text-white font-semibold ">
+            Use single-character keyboard shortcuts
+          </h3>
+          <p className="text-sm text-neutral-400">
+            Use single-character shortcuts to perform common actions.
+          </p>
+        </div>
+      </div>
+
+      <fieldset>
+        <label className="radio-filed text-white">
+          <span>Off</span>
+          <input type="radio" id="off" name="drone" value="off" />
+        </label>
+
+        <label className="radio-filed text-white">
+          <span>On</span>
+          <input type="radio" id="on" name="drone" value="on" />
+        </label>
+      </fieldset>
+    </>
+  );
+};
+          

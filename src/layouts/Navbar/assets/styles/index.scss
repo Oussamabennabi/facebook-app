@@ -194,18 +194,18 @@ nav {
     transform: translateX(-10px);
     overflow: hidden;
     padding: 1rem;
-
 }
 
 .dropdown-item {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
     width: 100%;
     padding: .7rem ;
     cursor: pointer;
     border-radius: .4rem;
+
     &:hover,&:focus {
         background-color: #464748;
 
@@ -227,6 +227,27 @@ nav {
         height: 35px;
     }
 }
+.dropdown-item-no-hover {
+  cursor: default;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.radio-filed {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .7rem ;
+  cursor: pointer;
+  border-radius: .4rem;
+  margin-left: 45px;
+    &:hover,&:focus {
+        background-color: #464748;
+
+    }
+}
+
 .menu {
   width: 100%;
 }
@@ -261,6 +282,23 @@ nav {
 }
 
 .menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all .3s ease-in-out;
+}
+
+// Third 'sub of menu'
+.menu-third-enter {
+  position: absolute;
+  transform: translateX(110%);
+
+}
+
+.menu-third-enter-active {
+  transform: translateX(0);
+  transition: all .3s ease-in-out;
+}
+
+.menu-third-exit-active {
   transform: translateX(110%);
   transition: all .3s ease-in-out;
 }
