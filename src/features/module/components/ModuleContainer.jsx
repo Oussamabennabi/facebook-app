@@ -34,7 +34,7 @@ const ModuleContainer = ({ children }) => {
       <div className="bg-black bg-opacity-75 z-[calc(100000000000)]  fixed  inset-0 h-screen px-3 ">
         <div
           ref={moduleRef}
-          className="bg-neutral-800 py-3  m-auto shadow-lg shadow-black rounded-lg max-h-[calc(90%)]  w-full  mt-48  max-w-lg "
+          className="bg-neutral-800 py-3  m-auto shadow-lg shadow-black rounded-lg max-h-[calc(90%)]  w-full  lg:mt-48 mt-10  max-w-lg "
         >
           {children}
         </div>

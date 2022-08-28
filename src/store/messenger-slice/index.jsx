@@ -7,10 +7,10 @@ const messengerSlice = createSlice({
   },
   reducers: {
     showMessenger(state) {
-      state.isModuleHidden = false;
+      state.isMessengerHidden = false;
     },
     hideMessenger(state) {
-      state.isModuleHidden = true;
+      state.isMessengerHidden = true;
     },
   },
 });

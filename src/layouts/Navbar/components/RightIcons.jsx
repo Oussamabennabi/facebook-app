@@ -4,10 +4,12 @@ import { ReactComponent as MessengerIcon } from "../assets/icons/messenger.svg";
 import { ReactComponent as NotificationIcon } from "../assets/icons/notification.svg";
 import {Dropdown} from "./Dropdown";
 import { useOutsideAlerter } from "../../../hooks/useOutsideAlert";
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import { MESSENGER_REDUCERS } from '../../../store/messenger-slice';
 const RightIcons = () => {
   const [isOpen, setIsOpen] = useState(false);
  const wrapperRef = useRef(null);
+ const dispatch = useDispatch()
  useOutsideAlerter(wrapperRef, setIsOpen);
   const { userPhoto } = useSelector((s) => s.user)
   
@@ -17,7 +19,9 @@ const RightIcons = () => {
         <CreateIcon fill="#d0d1d5" className="mb-1 mr-1" />
         <div className="info-text">Create</div>
       </button>
-      <button className="icon">
+      <button
+        onClick={()=>dispatch(MESSENGER_REDUCERS.showMessenger())}
+        className="icon">
         <MessengerIcon fill="#d0d1d5" />
         <div className="info-text">Messenger</div>
       </button>

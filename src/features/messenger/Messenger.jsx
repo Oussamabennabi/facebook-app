@@ -8,19 +8,21 @@ import { useSelector } from 'react-redux'
 const socket = io("http://localhost:3001");
 
 const Messenger = () => {
-  const { isSignedIn, userName, userId } = useSelector((s) => s.user)
+  const { isMessengerHidden } = useSelector((s) => s.messenger);
   const [messages, setMessages] = useState([]);
   
  
   
   return (
-    
-    <div className="w-[calc(328px)] h-[calc(455px)] absolute bottom-2 rounded-md right-16 z-[calc(10000)] bg-neutral-800">
-      
-      <MessengerHeader />
-      <MessengerBody socket={socket} messages={messages} setMessages={setMessages} />
-      <MessengerFooter socket={socket}  setMessages={setMessages} />
-    </div>
+    <>
+      {!isMessengerHidden &&
+      <div className="w-[calc(328px)] h-[calc(455px)] absolute bottom-2 rounded-md right-16 z-[calc(10000)] bg-neutral-800">
+        <MessengerHeader />
+        <MessengerBody socket={socket} messages={messages} setMessages={setMessages} />
+        <MessengerFooter socket={socket}  setMessages={setMessages} />
+      </div>
+      }
+    </>
   );
 }
 
